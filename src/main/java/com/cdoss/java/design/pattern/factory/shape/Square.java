@@ -6,7 +6,7 @@ public class Square implements IShape {
 
 	@Override
 	public void draw() {
-		System.out.println("Inside the Square::draw() method"); 
+		System.out.println("Inside the Square::draw() method");
 	}
 
 }
