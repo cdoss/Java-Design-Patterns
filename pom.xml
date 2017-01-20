@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.cdoss.java.design.pattern</groupId>
   <artifactId>design-patterns</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1-SNAPSHOT</version>
   <name>Java Design Patterns</name>
   <description>Basic Java Design Patterns</description>
   
