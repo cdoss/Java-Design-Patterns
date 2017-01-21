@@ -1,4 +1,7 @@
-package com.cdoss.java.design.pattern.factory;
+package com.cdoss.java.design.pattern.demo;
+
+import com.cdoss.java.design.pattern.factory.IShape;
+import com.cdoss.java.design.pattern.factory.ShapeFactory;
 
 public class FactoryPatternDemo {
 
