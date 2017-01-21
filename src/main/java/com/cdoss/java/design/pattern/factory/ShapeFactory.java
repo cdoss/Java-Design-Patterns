@@ -5,7 +5,7 @@ import com.cdoss.java.design.pattern.factory.shape.Circle;
 import com.cdoss.java.design.pattern.factory.shape.Rectangle;
 import com.cdoss.java.design.pattern.factory.shape.Square;
 
-public class ShapeFactory {
+public class ShapeFactory extends AbstractFactory {
 
 	public IShape getShape(String shapeType) {
 		if (shapeType == null) {
@@ -20,6 +20,11 @@ public class ShapeFactory {
 			return new Square();
 		}
 
+		return null;
+	}
+
+	@Override
+	IColor getColor(String color) {
 		return null;
 	}
 }
