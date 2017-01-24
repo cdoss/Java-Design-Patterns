@@ -7,13 +7,13 @@ import com.cdoss.java.design.pattern.factory.color.Red;
 public class ColorFactory extends AbstractFactory {
 
 	@Override
-	IShape getShape(String shape) {
+	public IShape getShape(String shape) {
 		return null;
 	}
 
 	@Override
-	IColor getColor(String color) {
-		
+	public IColor getColor(String color) {
+
 		if (color == null) {
 			return null;
 		}
