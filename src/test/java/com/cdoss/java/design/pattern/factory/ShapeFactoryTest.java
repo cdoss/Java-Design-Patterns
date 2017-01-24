@@ -4,10 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class FactoryTest {
+public class ShapeFactoryTest {
 
 	@Test
-	public void testShapeFactory() {
+	public void testgetShape() {
 
 		IShape shape1;
 		IShape shape2;
@@ -31,6 +31,14 @@ public class FactoryTest {
 
 		shape5 = shapeFactory.getShape("TRIANGLE");
 		assertNull(shape5);
+	}
+
+	@Test
+	public void testgetColor() {
+		ShapeFactory shapeFactory = new ShapeFactory();
+
+		IColor color1 = shapeFactory.getColor("RED");
+		assertNull(color1);
 	}
 
 }
