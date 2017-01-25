@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.cdoss.java.design.pattern</groupId>
   <artifactId>design-patterns</artifactId>
-  <version>0.3-SNAPSHOT</version>
+  <version>0.3</version>
   <name>Java Design Patterns</name>
   <description>Basic Java Design Patterns</description>
   
@@ -10,7 +10,7 @@
 	<url>https://github.com/cdoss/Java-Design-Patterns</url>
 	<connection>scm:git:git://github.com/cdoss/Java-Design-Patterns.git</connection>
     <developerConnection>scm:git:git@github.com:cdoss/Java-Design-Patterns.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>design-patterns-0.3</tag>
   </scm>
   
   <build>
