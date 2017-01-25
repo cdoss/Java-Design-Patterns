@@ -9,7 +9,7 @@ public class SingletonTest {
 	@Test
 	public void testGetInstance() {
 		SingletonObject singleton = SingletonObject.getInstance();
-		assertEquals("SingleObject", singleton.getClass().getSimpleName());
+		assertEquals("SingletonObject", singleton.getClass().getSimpleName());
 	}
 
 }
