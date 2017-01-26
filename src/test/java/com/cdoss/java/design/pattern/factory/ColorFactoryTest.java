@@ -2,42 +2,63 @@ package com.cdoss.java.design.pattern.factory;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class ColorFactoryTest {
 
-	@Test
-	public void testGetColor() {
-		IColor color1;
-		IColor color2;
-		IColor color3;
-		IColor color4;
-		IColor color5;
+	private ColorFactory colorFactory;
 
-		ColorFactory colorFactory = new ColorFactory();
+	@Before
+	public void setUp() {
+		colorFactory = new ColorFactory();
+	}
 
-		color1 = colorFactory.getColor("RED");
-		assertEquals("Red", color1.getClass().getSimpleName());
-
-		color2 = colorFactory.getColor("BLUE");
-		assertEquals("Blue", color2.getClass().getSimpleName());
-
-		color3 = colorFactory.getColor("GREEN");
-		assertEquals("Green", color3.getClass().getSimpleName());
-
-		color4 = colorFactory.getColor("PURPLE");
-		assertNull(color4);
-
-		color5 = colorFactory.getColor(null);
-		assertNull(color5);
+	@After
+	public void tearDown() {
+		colorFactory = null;
 	}
 
 	@Test
-	public void testGetShape() {
-		ColorFactory colorFactory = new ColorFactory();
-
-		IShape shape1 = colorFactory.getShape("CIRCLE");
-		assertNull(shape1);
+	public void testColorFactoryGetColorRed() {
+		IColor color = colorFactory.getColor("RED");
+		assertEquals("Red", color.getClass().getSimpleName());
 	}
 
+	@Test
+	public void testColorFactoryGetColorBlue() {
+		IColor color = colorFactory.getColor("BLUE");
+		assertEquals("Blue", color.getClass().getSimpleName());
+	}
+
+	@Test
+	public void testColorFactoryGetColorGreen() {
+		IColor color = colorFactory.getColor("GREEN");
+		assertEquals("Green", color.getClass().getSimpleName());
+	}
+
+	@Test
+	public void testColorFactoryGetColorNotAvailable() {
+		IColor color = colorFactory.getColor("PURPLE");
+		assertNull(color);
+	}
+
+	@Test
+	public void testColorFactoryGetColorNull() {
+		IColor color = colorFactory.getColor(null);
+		assertNull(color);
+	}
+
+	@Test
+	public void testColorFactoryGetShapeCircle() {
+		IShape shape = colorFactory.getShape("CIRCLE");
+		assertNull(shape);
+	}
+
+	@Test
+	public void testColorFactoryGetShapeNull() {
+		IShape shape = colorFactory.getShape(null);
+		assertNull(shape);
+	}
 }
