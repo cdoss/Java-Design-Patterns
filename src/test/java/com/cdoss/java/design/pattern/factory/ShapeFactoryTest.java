@@ -2,43 +2,63 @@ package com.cdoss.java.design.pattern.factory;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class ShapeFactoryTest {
 
+	private AbstractFactory shapeFactory;
+	
+	@Before
+	public void setUp(){
+		shapeFactory = new ShapeFactory();
+	}
+	
+	@After
+	public void tearDown(){
+		shapeFactory = null;
+	}
+	
 	@Test
-	public void testgetShape() {
-
-		IShape shape1;
-		IShape shape2;
-		IShape shape3;
-		IShape shape4;
-		IShape shape5;
-
-		ShapeFactory shapeFactory = new ShapeFactory();
-
-		shape1 = shapeFactory.getShape("CIRCLE");
-		assertEquals("Circle", shape1.getClass().getSimpleName());
-
-		shape2 = shapeFactory.getShape("RECTANGLE");
-		assertEquals("Rectangle", shape2.getClass().getSimpleName());
-
-		shape3 = shapeFactory.getShape("SQUARE");
-		assertEquals("Square", shape3.getClass().getSimpleName());
-
-		shape4 = shapeFactory.getShape(null);
-		assertNull(shape4);
-
-		shape5 = shapeFactory.getShape("TRIANGLE");
-		assertNull(shape5);
+	public void testShapeFactoryGetShapeCircle(){
+		IShape shape = shapeFactory.getShape("CIRCLE");
+		assertEquals("Circle", shape.getClass().getSimpleName());
+	}
+	
+	@Test
+	public void testShapeFactoryGetShapeRectangle(){
+		IShape shape = shapeFactory.getShape("RECTANGLE");
+		assertEquals("Rectangle", shape.getClass().getSimpleName());
+	}
+	
+	@Test
+	public void testShapeFactoryGetShapeSquare(){
+		IShape shape = shapeFactory.getShape("SQUARE");
+		assertEquals("Square", shape.getClass().getSimpleName());
+	}
+	
+	@Test
+	public void testShapeFactoryGetShapeTriangle(){
+		IShape shape = shapeFactory.getShape("TRIANGLE");
+		assertNull(shape);
+	}
+	
+	@Test
+	public void testShapeFactoryGetShapeNull(){
+		IShape shape = shapeFactory.getShape(null);
+		assertNull(shape);
 	}
 
 	@Test
-	public void testgetColor() {
-		ShapeFactory shapeFactory = new ShapeFactory();
-
-		IColor color1 = shapeFactory.getColor("RED");
-		assertNull(color1);
+	public void testShapeFactoryGetColorRed() {
+		IColor color = shapeFactory.getColor("RED");
+		assertNull(color);
 	}
 
+	@Test
+	public void testShapeFactoryGetColorNull(){
+		IColor color = shapeFactory.getColor(null);
+		assertNull(color);
+	}
 }
